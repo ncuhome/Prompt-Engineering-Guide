@@ -40,7 +40,7 @@ The models are trained on both multimodal and multilingual data such as web docu
 
 ## Gemini Experimental Results
 
-Gemini Ultra achieves highest accuracy when combined with approaches like [chain-of-thought (CoT) prompting](https://www.promptingguide.ai/techniques/cot) and [self-consistency](https://www.promptingguide.ai/techniques/consistency) which helps dealing with model uncertainty. 
+Gemini Ultra achieves highest accuracy when combined with approaches like [chain-of-thought (CoT) prompting](/techniques/cot) and [self-consistency](/techniques/consistency) which helps dealing with model uncertainty. 
 
 As reported in the technical report, Gemini Ultra improves its performance on MMLU from 84.0% with greedy sampling to 90.0% with uncertainty-routed chain-of-thought approach (involve CoT and majority voting) with 32 samples while it marginally improves to 85.0% with the use of 32 chain-of-thought samples only. Similarly, CoT and self-consistency achieves 94.4% accuracy on the GSM8K grade-school math benchmark. In addition, Gemini Ultra correctly implements 74.4% of the [HumanEval](https://paperswithcode.com/dataset/humaneval) code completion problems. Below is a table summarizing the results of Gemini and how the models compare to other notable models.
 

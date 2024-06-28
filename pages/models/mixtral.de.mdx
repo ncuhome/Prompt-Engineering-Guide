@@ -19,11 +19,11 @@ In diesem Leitfaden bieten wir einen Überblick über das Mixtral 8x7B-Modell, e
 
 ## Einführung in Mixtral (Mixtral of Experts)
 
-Mixtral 8x7B ist ein Sparse Mixture of Experts (SMoE) Sprachmodell, [veröffentlicht von Mistral AI](https://mistral.ai/news/mixtral-of-experts/). Mixtral hat eine ähnliche Architektur wie [Mistral 7B](https://www.promptingguide.ai/models/mistral-7b), der Hauptunterschied besteht jedoch darin, dass jede Schicht in Mixtral 8x7B aus 8 Feedforward-Blöcken (d.h. Experten) besteht. Mixtral ist ein Decoder-only-Modell, bei dem für jedes Token, in jeder Schicht, ein Router-Netzwerk zwei Experten (d.h. 2 Gruppen aus 8 unterschiedlichen Gruppen von Parametern) auswählt, um das Token zu verarbeiten und deren Ausgaben additiv zu kombinieren. Anders ausgedrückt, der Ausgang des gesamten MoE-Moduls für einen gegebenen Eingabewert wird durch die gewichtete Summe der Ausgaben erzeugt, die von den Expertennetzwerken produziert werden.
+Mixtral 8x7B ist ein Sparse Mixture of Experts (SMoE) Sprachmodell, [veröffentlicht von Mistral AI](https://mistral.ai/news/mixtral-of-experts/). Mixtral hat eine ähnliche Architektur wie [Mistral 7B](/models/mistral-7b), der Hauptunterschied besteht jedoch darin, dass jede Schicht in Mixtral 8x7B aus 8 Feedforward-Blöcken (d.h. Experten) besteht. Mixtral ist ein Decoder-only-Modell, bei dem für jedes Token, in jeder Schicht, ein Router-Netzwerk zwei Experten (d.h. 2 Gruppen aus 8 unterschiedlichen Gruppen von Parametern) auswählt, um das Token zu verarbeiten und deren Ausgaben additiv zu kombinieren. Anders ausgedrückt, der Ausgang des gesamten MoE-Moduls für einen gegebenen Eingabewert wird durch die gewichtete Summe der Ausgaben erzeugt, die von den Expertennetzwerken produziert werden.
 
 <Screenshot src={mixtralexperts} alt="Mixtral of Experts Layer" />
 
-Da Mixtral ein SMoE ist, verfügt es über insgesamt 47B Parameter, verwendet jedoch nur 13B pro Token während der Inferenz. Die Vorteile dieses Ansatzes umfassen eine bessere Kontrolle über Kosten und Latenz, da es nur einen Bruchteil der gesamten Parametermenge pro Token verwendet. Mixtral wurde mit offenen Webdaten und einer Kontextgröße von 32 Tokens trainiert. Berichten zufolge übertrifft Mixtral Llama 2 80B mit 6x schnellerer Inferenz und erreicht oder übertrifft [GPT-3.5](https://www.promptingguide.ai/models/chatgpt) in mehreren Benchmarks.
+Da Mixtral ein SMoE ist, verfügt es über insgesamt 47B Parameter, verwendet jedoch nur 13B pro Token während der Inferenz. Die Vorteile dieses Ansatzes umfassen eine bessere Kontrolle über Kosten und Latenz, da es nur einen Bruchteil der gesamten Parametermenge pro Token verwendet. Mixtral wurde mit offenen Webdaten und einer Kontextgröße von 32 Tokens trainiert. Berichten zufolge übertrifft Mixtral Llama 2 80B mit 6x schnellerer Inferenz und erreicht oder übertrifft [GPT-3.5](/models/chatgpt) in mehreren Benchmarks.
 
 Die Mixtral-Modelle sind [unter Apache 2.0 lizenziert](https://github.com/mistralai/mistral-src#Apache-2.0-1-ov-file).
 
@@ -224,7 +224,7 @@ def celsius_to_fahrenheit(celsius):
 
 ### System-Prompt zur Durchsetzung von Schutzmaßnahmen
 
-Ähnlich wie beim [Mistral 7B-Modell](https://www.promptingguide.ai/models/mistral-7b) ist es möglich, Schutzmaßnahmen in Chat-Generierungen durchzusetzen, indem man die `safe_prompt` Boolean-Flagge in der API mit `safe_mode=True` setzt:
+Ähnlich wie beim [Mistral 7B-Modell](/models/mistral-7b) ist es möglich, Schutzmaßnahmen in Chat-Generierungen durchzusetzen, indem man die `safe_prompt` Boolean-Flagge in der API mit `safe_mode=True` setzt:
 
 ```python
 # hilfreiche Vervollständigungsfunktion
@@ -264,7 +264,7 @@ Sie können auch alle Codebeispiele im folgenden Notebook ausprobieren:
   <Card
     icon={<CodeIcon />}
     title="Prompt Engineering mit Mixtral"
-    href="https://github.com/dair-ai/Prompt-Engineering-Guide/blob/main/notebooks/pe-mixtral-introduction.ipynb"
+    href="https://github.com/ncuhome/Prompt-Engineering-Guide/blob/main/notebooks/pe-mixtral-introduction.ipynb"
   />
 </Cards>
 

@@ -19,11 +19,11 @@ import mixtralchat from '../../img/mixtral/mixtral-chatbot-arena.png'
 
 ## Введение в Mixtral (Mixtral of Experts)
 
-Mixtral 8x7B представляет собой языковую модель Sparse Mixture of Experts (SMoE). [выпущенную Mistral AI](https://mistral.ai/news/mixtral-of-experts/). Mixtral имеет схожую архитектуру с [Mistral 7B](https://www.promptingguide.ai/models/mistral-7b/) но главное различие в том, что каждый слой в Mixtral 8x7B состоит из 8 блоков прямой связи (экспертов). Mixtral — это модель только для декодирования, в которой для каждого токена на каждом уровне сеть маршрутизаторов выбирает двух экспертов (то есть 2 группы из 8 различных групп параметров) для обработки токена и объединяя их выходные данные путем сложения. Другими словами, выходные данные всего модуля MoE для данного входного сигнала получаются через взвешенную сумму выходных данных, произведенных экспертными сетями.
+Mixtral 8x7B представляет собой языковую модель Sparse Mixture of Experts (SMoE). [выпущенную Mistral AI](https://mistral.ai/news/mixtral-of-experts/). Mixtral имеет схожую архитектуру с [Mistral 7B](/models/mistral-7b/) но главное различие в том, что каждый слой в Mixtral 8x7B состоит из 8 блоков прямой связи (экспертов). Mixtral — это модель только для декодирования, в которой для каждого токена на каждом уровне сеть маршрутизаторов выбирает двух экспертов (то есть 2 группы из 8 различных групп параметров) для обработки токена и объединяя их выходные данные путем сложения. Другими словами, выходные данные всего модуля MoE для данного входного сигнала получаются через взвешенную сумму выходных данных, произведенных экспертными сетями.
 
 <Screenshot src={mixtralexperts} alt="Mixtral of Experts Layer" />
 
-Учитывая, что Mixtral является SMoE, он имеет в общей сложности 47 миллиардов параметров, но во время вывода использует только 13 миллиардов на токен. Преимущества этого подхода включают лучший контроль стоимости и задержки, поскольку он использует только часть общего набора параметров для каждого токена. Mixtral обучался на открытых веб-данных в размере контекста в 32 токена. Согласно информации, что Mixtral превосходит Llama 2 80B с в 6 раз более быстрым выводом и соответствует или превосходит [GPT-3.5](https://www.promptingguide.ai/models/chatgpt) по нескольким тестированиям.
+Учитывая, что Mixtral является SMoE, он имеет в общей сложности 47 миллиардов параметров, но во время вывода использует только 13 миллиардов на токен. Преимущества этого подхода включают лучший контроль стоимости и задержки, поскольку он использует только часть общего набора параметров для каждого токена. Mixtral обучался на открытых веб-данных в размере контекста в 32 токена. Согласно информации, что Mixtral превосходит Llama 2 80B с в 6 раз более быстрым выводом и соответствует или превосходит [GPT-3.5](/models/chatgpt) по нескольким тестированиям.
 
 Модели Mixtral находятся [под лицензией Apache 2.0](https://github.com/mistralai/mistral-src#Apache-2.0-1-ov-file).
 
@@ -192,7 +192,7 @@ def celsius_to_fahrenheit(celsius):
 
 ### Системный промпт чтобы обеспечить ограждения
 
-Аналогично модели [Mistral 7B model](https://www.promptingguide.ai/ru/models/mistral-7b), можно установить ограничения при генерации чата, используя `safe_prompt`, установив `safe_mode=True`:
+Аналогично модели [Mistral 7B model](/ru/models/mistral-7b), можно установить ограничения при генерации чата, используя `safe_prompt`, установив `safe_mode=True`:
 
 ```python
 # helpful completion function
@@ -232,7 +232,7 @@ Always assist with care, respect, and truth. Respond with utmost utility yet sec
     <Card
     icon={<CodeIcon />}
     title="Prompt Engineering with Mixtral"
-    href="https://github.com/dair-ai/Prompt-Engineering-Guide/blob/main/notebooks/pe-mixtral-introduction.ipynb"
+    href="https://github.com/ncuhome/Prompt-Engineering-Guide/blob/main/notebooks/pe-mixtral-introduction.ipynb"
     />
 </Cards>
 

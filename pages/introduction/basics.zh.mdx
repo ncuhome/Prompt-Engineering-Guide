@@ -25,7 +25,7 @@ blue.
 
 <Screenshot src={INTRO1} alt="INTRO1" />
 
-需要注意的是，当使用 OpenAI 的 `gpt-4` 或者 `gpt-3.5-turbo` 等聊天模型时，您可以使用三个不同的角色来构建 prompt： `system`、`user` 和 `assistant`。其中 `system` 不是必需的，但有助于设定 `assistant` 的整体行为，帮助模型了解用户的需求，并根据这些需求提供相应的响应。上面的示例仅包含一条 `user` 消息，您可以使用 `user` 消息直接作为 prompt。为简单起见，本指南所有示例（除非明确提及）将仅使用 `user` 消息来作为 `gpt-3.5-turbo` 模型的 prompt。上面示例中 `assistant` 的消息是模型的响应。您还可以定义 `assistant` 消息来传递模型所需行为的示例。您可以在[此处](https://www.promptingguide.ai/models/chatgpt)了解有关使用聊天模型的更多信息。
+需要注意的是，当使用 OpenAI 的 `gpt-4` 或者 `gpt-3.5-turbo` 等聊天模型时，您可以使用三个不同的角色来构建 prompt： `system`、`user` 和 `assistant`。其中 `system` 不是必需的，但有助于设定 `assistant` 的整体行为，帮助模型了解用户的需求，并根据这些需求提供相应的响应。上面的示例仅包含一条 `user` 消息，您可以使用 `user` 消息直接作为 prompt。为简单起见，本指南所有示例（除非明确提及）将仅使用 `user` 消息来作为 `gpt-3.5-turbo` 模型的 prompt。上面示例中 `assistant` 的消息是模型的响应。您还可以定义 `assistant` 消息来传递模型所需行为的示例。您可以在[此处](/models/chatgpt)了解有关使用聊天模型的更多信息。
 
 从上面的提示示例中可以看出，语言模型能够基于我们给出的上下文内容 `"The sky is" 完成续写。而输出的结果可能是出人意料的，或远高于我们的任务要求。 但是，我们可以通过改进提示词来获得更好的结果。
 

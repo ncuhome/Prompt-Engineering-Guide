@@ -237,7 +237,7 @@ The gift was terrible and the person who gave it to you did not care
 
 我们可以看到，即使我们在最后注入了恶意指令，模型仍然执行了原始任务。看起来指令中提供的额外上下文有助于引导模型执行我们想要的原始任务。
 
-您可以在[此笔记本](https://github.com/dair-ai/Prompt-Engineering-Guide/blob/main/notebooks/pe-chatgpt-adversarial.ipynb)中尝试此示例。
+您可以在[此笔记本](https://github.com/ncuhome/Prompt-Engineering-Guide/blob/main/notebooks/pe-chatgpt-adversarial.ipynb)中尝试此示例。
 
 ### 参数化提示组件
 提示注入与[SQL注入](https://en.wikipedia.org/wiki/SQL_injection)有相似之处，我们可以从该领域潜在地学习防御策略。受此启发，[Simon提出的一个潜在解决方案](https://simonwillison.net/2022/Sep/12/prompt-injection/)是将提示的不同组件参数化，例如将指令与输入分开并以不同方式处理它们。虽然这可能会导致更清洁和更安全的解决方案，但我认为这种权衡将是缺乏灵活性。随着我们继续构建与LLM交互的软件，这是一个感兴趣的活跃领域。

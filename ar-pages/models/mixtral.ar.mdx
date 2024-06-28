@@ -20,11 +20,11 @@ In this guide, we provide an overview of the Mixtral 8x7B model, including promp
 
 ## Introduction to Mixtral (Mixtral of Experts)
 
-Mixtral 8x7B is a Sparse Mixture of Experts (SMoE) language model [released by Mistral AI](https://mistral.ai/news/mixtral-of-experts/). Mixtral has a similar architecture as [Mistral 7B](https://www.promptingguide.ai/models/mistral-7b) but the main difference is that each layer in Mixtral 8x7B is composed of 8 feedforward blocks (i.e,. experts). Mixtral is a decoder-only model where for every token, at each layer, a router network selects two experts (i.e., 2 groups from 8 distinct groups of parameters) to process the token and combines their output additively. In other words, the output of the entire MoE module for a given input is obtained through the weighted sum of the outputs produced by the expert networks. 
+Mixtral 8x7B is a Sparse Mixture of Experts (SMoE) language model [released by Mistral AI](https://mistral.ai/news/mixtral-of-experts/). Mixtral has a similar architecture as [Mistral 7B](/models/mistral-7b) but the main difference is that each layer in Mixtral 8x7B is composed of 8 feedforward blocks (i.e,. experts). Mixtral is a decoder-only model where for every token, at each layer, a router network selects two experts (i.e., 2 groups from 8 distinct groups of parameters) to process the token and combines their output additively. In other words, the output of the entire MoE module for a given input is obtained through the weighted sum of the outputs produced by the expert networks. 
 
 <Screenshot src={mixtralexperts} alt="Mixtral of Experts Layer" />
 
-Given that Mixtral is an SMoE, it has a total of 47B parameters but only uses 13B per token during inference. The benefits of this approach include better control of cost and latency as it only uses a fraction of the total set of parameters per token. Mixtral was trained with open Web data and a context size of 32 tokens. It is reported that Mixtral outperforms Llama 2 80B with 6x faster inference and matches or outperforms [GPT-3.5](https://www.promptingguide.ai/models/chatgpt) on several benchmarks.
+Given that Mixtral is an SMoE, it has a total of 47B parameters but only uses 13B per token during inference. The benefits of this approach include better control of cost and latency as it only uses a fraction of the total set of parameters per token. Mixtral was trained with open Web data and a context size of 32 tokens. It is reported that Mixtral outperforms Llama 2 80B with 6x faster inference and matches or outperforms [GPT-3.5](/models/chatgpt) on several benchmarks.
 
 The Mixtral models are [licensed under Apache 2.0](https://github.com/mistralai/mistral-src#Apache-2.0-1-ov-file).
 
@@ -197,7 +197,7 @@ def celsius_to_fahrenheit(celsius):
 
 ### System Prompt to Enforce Guardrails
 
-Similar to the [Mistral 7B model](https://www.promptingguide.ai/models/mistral-7b), it's possible to enforce guardrails in chat generations using the `safe_prompt` boolean flag in the API by setting `safe_mode=True`:
+Similar to the [Mistral 7B model](/models/mistral-7b), it's possible to enforce guardrails in chat generations using the `safe_prompt` boolean flag in the API by setting `safe_mode=True`:
 
 ```python
 # helpful completion function
@@ -237,7 +237,7 @@ You can also try all the code examples in the following notebook:
     <Card
     icon={<CodeIcon />}
     title="Prompt Engineering with Mixtral"
-    href="https://github.com/dair-ai/Prompt-Engineering-Guide/blob/main/notebooks/pe-mixtral-introduction.ipynb"
+    href="https://github.com/ncuhome/Prompt-Engineering-Guide/blob/main/notebooks/pe-mixtral-introduction.ipynb"
     />
 </Cards>
 

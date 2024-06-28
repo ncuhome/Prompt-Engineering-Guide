@@ -8,13 +8,13 @@ In this summary, we highlight the main findings and practical insights from the 
 
 !["RAG Framework"](../../img/rag/rag-framework.png)
 
-As better introduced [here](https://www.promptingguide.ai/techniques/rag), RAG can be defined as:
+As better introduced [here](/techniques/rag), RAG can be defined as:
 
 > RAG takes input and retrieves a set of relevant/supporting documents given a source (e.g., Wikipedia). The documents are concatenated as context with the original input prompt and fed to the text generator which produces the final output. This makes RAG adaptive for situations where facts could evolve over time. This is very useful as LLMs's parametric knowledge is static. RAG allows language models to bypass retraining, enabling access to the latest information for generating reliable outputs via retrieval-based generation.
 
 In short, the retrieved evidence obtained in RAG can serve as a way to enhance the accuracy, controllability, and relevancy of the LLM's response. This is why RAG can help reduce issues of hallucination or performance when addressing problems in a highly evolving environment.
 
-While RAG has also involved the optimization of pre-training methods, current approaches have largely shifted to combining the strengths of RAG and powerful fine-tuned models like [ChatGPT](https://www.promptingguide.ai/models/chatgpt) and [Mixtral](https://www.promptingguide.ai/models/mixtral). The chart below shows the evolution of RAG-related research:
+While RAG has also involved the optimization of pre-training methods, current approaches have largely shifted to combining the strengths of RAG and powerful fine-tuned models like [ChatGPT](/models/chatgpt) and [Mixtral](/models/mixtral). The chart below shows the evolution of RAG-related research:
 
 !["RAG Framework"](../../img/rag/rag-evolution.png)
 *[Figure Source](https://arxiv.org/abs/2312.10997)*

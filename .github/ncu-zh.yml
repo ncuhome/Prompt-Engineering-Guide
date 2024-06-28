@@ -1,0 +1,49 @@
+name: Test Deployment
+
+env:
+  VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+  VERCEL_PROJECT_ID: ${{ secrets.TEST_VERCEL_PROJECT_ID }}
+  DOMAIN_URL: ${{ secrets.TEST_DOMAIN_URL }}
+
+on:
+  push:
+    branches: [test]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    timeout-minutes: 10 # 设置作业的超时时间为 10 分钟，可根据需要自行调整
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install Vercel CLI
+        run: npm install --global vercel@canary
+      - uses: pnpm/action-setup@v2
+        with:
+          version: latest
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: 'pnpm'
+      - name: Pull Vercel Environment Information
+        run: vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
+      - name: Build Project Artifacts
+        run: vercel build --prod --local-config ./vercel.json --token=${{ secrets.VERCEL_TOKEN }}
+      - name: Deploy Project Artifacts to Vercel
+        run: vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }}
+
+      - name: Handle special characters in commit message
+        run: |
+          echo "SAFE_COMMIT_MESSAGE=$(git log -1 --pretty=%B | sed ':a;N;$!ba;s/\n/\\n/g' | sed 's/"/\\"/g' | sed "s/'/\\'/g")" >> $GITHUB_ENV
+      - name: Send webhook on success
+        if: success()
+        run: |
+          PAYLOAD=$(echo -n '{"msg_type": "post", "content": {"post": {"zh_cn": {"title": "项目更新通知", "content": [[{"tag": "text", "text": "测试环境更新: '"$SAFE_COMMIT_MESSAGE"'"}, {"tag": "a", "text": "部署成功", "href": "'$DOMAIN_URL'" }]]}}}}')
+          printf "$PAYLOAD"
+          curl -X POST -H "Content-Type: application/json" -d "$PAYLOAD" ${{ secrets.FEISHUNOTICE_URL }}
+      - name: Send FEISHUNOTICE on failure
+        if: failure()
+        run: |
+          REPO_URL="https://github.com/${{ github.repository_owner }}/${{ github.event.repository.name }}/actions"
+          curl -X POST -H "Content-Type: application/json" -d '{ "msg_type": "post", "content": { "post": { "zh_cn": { "title": "项目更新通知", "content": [ [{ "tag": "text", "text": "测试环境打包失败: " }, { "tag": "a", "text": "请查阅 GitHub workflow", "href": "'"${REPO_URL}"'" } ] ] } } } }' ${{ secrets.FEISHUNOTICE_URL }}

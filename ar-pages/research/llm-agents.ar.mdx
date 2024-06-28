@@ -38,13 +38,13 @@ While not mandatory, an agent can be profiled or be assigned a persona to define
 
 #### Planning Without Feedback
 
-The planning module helps to break down the necessary steps or subtasks the agent will solve individually to answer the user request. This step is important to enable the agent to reason better about the problem and reliably find a solution. The planning module will leverage an LLM to decompose a detailed plan which will include subtasks to help address the user question. Popular techniques for task decomposition include [Chain of Thought](https://www.promptingguide.ai/techniques/cot) and [Tree of Thoughts](https://www.promptingguide.ai/techniques/tot) which can be categorized as single-path reasoning and multi-path reasoning, respectively. Below is a figure comparing different strategies as formalized in [Wang et al., 2023](https://arxiv.org/abs/2308.11432):
+The planning module helps to break down the necessary steps or subtasks the agent will solve individually to answer the user request. This step is important to enable the agent to reason better about the problem and reliably find a solution. The planning module will leverage an LLM to decompose a detailed plan which will include subtasks to help address the user question. Popular techniques for task decomposition include [Chain of Thought](/techniques/cot) and [Tree of Thoughts](/techniques/tot) which can be categorized as single-path reasoning and multi-path reasoning, respectively. Below is a figure comparing different strategies as formalized in [Wang et al., 2023](https://arxiv.org/abs/2308.11432):
 
 !["LLM Agent Planning"](../../img/agents/task-decomposition.png)
 
 #### Planning With Feedback
 
-The planning modules above don't involve any feedback which makes it challenging to achieve long-horizon planning to solve complex tasks. To address this challenge, you can leverage a mechanism that enables the model to iteratively reflect and refine the execution plan based on past actions and observations. The goal is to correct and improve on past mistakes which helps to improve the quality of final results. This is particularly important in complex real-world environments and tasks where trial and error are key to completing tasks. Two popular methods for this reflection or critic mechanism include [ReAct](https://www.promptingguide.ai/techniques/react) and [Reflexion](https://arxiv.org/abs/2303.11366). 
+The planning modules above don't involve any feedback which makes it challenging to achieve long-horizon planning to solve complex tasks. To address this challenge, you can leverage a mechanism that enables the model to iteratively reflect and refine the execution plan based on past actions and observations. The goal is to correct and improve on past mistakes which helps to improve the quality of final results. This is particularly important in complex real-world environments and tasks where trial and error are key to completing tasks. Two popular methods for this reflection or critic mechanism include [ReAct](/techniques/react) and [Reflexion](https://arxiv.org/abs/2303.11366). 
 
 As an example, ReAct combines reasoning and acting aimed at enabling an LLM to solve complex tasks by interleaving between a series of steps (repeated N times): `Thought`, `Action`, and `Observation`. ReAct receives feedback from the environment in the form of observations. Other types of feedback can include human and model feedback. The figure below shows an example of ReAct and the different steps involved in performing question answering:
 
@@ -82,7 +82,7 @@ Tools are leveraged in different ways by LLMs:
 
 - [MRKL](https://arxiv.org/abs/2205.00445) is a framework that combines LLMs with expert modules that are either LLMs or symbolic (calculator or weather API).
 - [Toolformer](https://arxiv.org/abs/2302.04761) fine-tune LLMs to use external tool APIs. 
-- [Function Calling](https://www.promptingguide.ai/applications/function_calling) - augments LLMs with tool use capability which involves defining a set of tool APIs and providing it to the model as part of a request.
+- [Function Calling](/applications/function_calling) - augments LLMs with tool use capability which involves defining a set of tool APIs and providing it to the model as part of a request.
 - [HuggingGPT](https://arxiv.org/abs/2303.17580) - an LLM-powered agent that leverages LLMs as a task planner to connect various existing AI models (based on descriptions) to solve AI tasks.
 
 !["HuggingGPT"](../../img/agents/hugginggpt.png)

@@ -35,7 +35,7 @@ Gemini模型基于多模态和多语言数据进行训练，例如网络文档�
 
 ## Gemini实验结果
 
-Gemini Ultra在与[思维链提示(chain-of-thought (CoT) prompting)](https://www.promptingguide.ai/techniques/cot)和[自洽性(self-consistency)](https://www.promptingguide.ai/techniques/consistency)等有助于处理模型不确定性的方法相结合时，达到了最高的准确率。
+Gemini Ultra在与[思维链提示(chain-of-thought (CoT) prompting)](/techniques/cot)和[自洽性(self-consistency)](/techniques/consistency)等有助于处理模型不确定性的方法相结合时，达到了最高的准确率。
 
 技术报告中提到，Gemini Ultra在32个样本上的MMLU测试效果，从贪婪采样(greedy sampling)方法的84.0%提高到不确定性路由思维链(uncertainty-routed chain-of-thought)方法(包括CoT和多数投票(majority voting)）的90.0%，如果仅使用32个思维链样本，则略微提高到85.0%。类似地，思维链(CoT)和自洽性(self-consistency)在GSM8K小学数学基准上实现了94.4%的准确率。此外，Gemini Ultra正确地实现了74.4%的[HumanEval](https://paperswithcode.com/dataset/humaneval)代码补全问题。下表总结了Gemini的测试结果以及与其他著名模型的结果对比。
 

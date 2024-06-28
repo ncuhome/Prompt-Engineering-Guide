@@ -241,7 +241,7 @@ REPLACE THE SIMPLE_FUNCTION STRING INPUT WITH THE BEGINNING OF YOUR QUESTION AND
 
 注入された悪意のある指示を追加しても、モデルは元のタスクを実行し続けました。指示に追加された追加の文脈が、モデルが望ましいタスクを実行するのを助けたようです。
 
-この例を[このノートブック](https://github.com/dair-ai/Prompt-Engineering-Guide/blob/main/notebooks/pe-chatgpt-adversarial.ipynb)で試すことができます。
+この例を[このノートブック](https://github.com/ncuhome/Prompt-Engineering-Guide/blob/main/notebooks/pe-chatgpt-adversarial.ipynb)で試すことができます。
 
 ### プロンプトコンポーネントのパラメータ化
 プロンプトインジェクションは[SQLインジェクション](https://en.wikipedia.org/wiki/SQL_injection)に似ており、そのドメインから防御策を学ぶことができる可能性があります。これに着想を得て、[Simonが提案した](https://simonwillison.net/2022/Sep/12/prompt-injection/)プロンプトインジェクションの潜在的な解決策は、指示を入力から切り離して、それらを別々に扱うこと、さまざまなコンポーネントをパラメータ化することです。これにより、よりクリーンで安全なソリューションが実現できる可能性がありますが、柔軟性が欠ける可能性があります。これは、LLMとの相互作用を続けるにつれて、活発な関心事です。
