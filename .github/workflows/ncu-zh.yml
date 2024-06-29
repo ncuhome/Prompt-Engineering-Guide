@@ -31,7 +31,7 @@ jobs:
       - name: Build Project Artifacts
         run: vercel build --prod --local-config ./vercel.json --token=${{ secrets.VERCEL_TOKEN }}
       - name: Deploy Project Artifacts to Vercel
-        run: vercel deploy --prebuilt --prod  --archive=tgz --token=${{ secrets.VERCEL_TOKEN }}
+        run: vercel deploy  --prod  --token=${{ secrets.VERCEL_TOKEN }} #  --archive=tgz   --prebuilt 使用预编译好的产物
 
       - name: Handle special characters in commit message
         run: |
