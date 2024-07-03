@@ -1,6 +1,6 @@
 # 使用字母画一个人
 
-import { Tabs, Tab } from 'nextra/components'
+import {Tabs, Tab} from 'nextra/components'
 import {Callout} from 'nextra/components'
 
 ## 背景
@@ -30,9 +30,9 @@ import {Callout} from 'nextra/components'
   
     ```python
     from openai import OpenAI
-    client = OpenAI()
+    client = OpenAI ()
 
-    response = client.chat.completions.create(
+    response = client.chat.completions.create (
         model="gpt-4",
         messages=[
             {
@@ -53,7 +53,7 @@ import {Callout} from 'nextra/components'
         ```python
         import fireworks.client
         fireworks.client.api_key = "<FIREWORKS_API_KEY>"
-        completion = fireworks.client.ChatCompletion.create(
+        completion = fireworks.client.ChatCompletion.create (
             model="accounts/fireworks/models/mixtral-8x7b-instruct",
             messages=[
                 {
