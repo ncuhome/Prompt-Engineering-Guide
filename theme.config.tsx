@@ -81,7 +81,7 @@ const config: DocsThemeConfig = {
   docsRepositoryBase:
     "https://github.com/ncuhome/Prompt-Engineering-Guide/tree/main/",
   footer: {
-    text: "Copyright © 2024 DAIR.AI",
+    text: "Copyright © 2024 NCUHOME",
   },
   search: {
     placeholder: "Search...",
