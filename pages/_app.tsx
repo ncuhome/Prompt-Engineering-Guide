@@ -13,11 +13,11 @@ function MyApp({ Component, pageProps }: AppProps) {
       />
       <Script>
         {`
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-F99FVNWSL1');
-`}
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-F99FVNWSL1');
+        `}
       </Script>
 
       <Component {...pageProps} />
