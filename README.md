@@ -1,6 +1,6 @@
-# Prompt Engineering Guide
+# Prompt Engineering Guide 中文版
 
-提示工程指南（Prompt Engineering Guide）是由 [DAIR.AI](https://github.com/dair-ai) 发起，由 [NCUHOME](team.ncuos.com) 及中文开源社区共同翻译和改进的教程项目，旨在帮助研发和行业内相关人员了解提示工程。提示工程技能有助于更好地了解大型语言模型（LLM）的能力和局限性。研究人员利用提示工程提高 LLM 在各种常见和复杂任务（如问题解答和算术推理）中的能力。开发人员使用提示工程来设计与 LLM 和其他工具相连接的强大而有效的提示技术。
+提示词工程指南（Prompt Engineering Guide）是由 [DAIR.AI](https://github.com/dair-ai) 发起，由 [南昌大学人工智能工业研究院](http://ie.ncu.edu.cn/kxyj/kypt/43fd339753aa4f6e9b2755589419ac9b.htm#)、 [NCUHOME](team.ncuos.com) 及中文开源社区共同翻译和改进的教程项目，旨在帮助研发和行业内相关人员了解提示工程。提示工程技能有助于更好地了解大型语言模型（LLM）的能力和局限性。研究人员利用提示工程提高 LLM 在各种常见和复杂任务（如问题解答和算术推理）中的能力。开发人员使用提示工程来设计与 LLM 和其他工具相连接的强大而有效的提示技术。
 
 鉴于人们对使用 LLMs 进行开发的浓厚兴趣，我们创建了这一新的提示工程指南，其中包含与 LLMs 提示工程相关的所有最新论文、学习指南、讲座、参考资料和工具。
 
